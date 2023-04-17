@@ -1,0 +1,40 @@
+
+.containerlvl3 {
+    font-size: larger;
+    }
+    
+    .liwraplv3 {
+        margin-right: 15px;
+        font-size:x-large;
+    
+    }
+    .visible {
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    .blur-text {
+            filter: blur(5px);
+            cursor: pointer;
+            margin-right: 5px;
+        }
+    
+    
+        .lvl-three {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+            flex-direction: column;
+        }
+        
+        .words-wrapper {
+            padding-top: 10px;
+            border-bottom: 1px solid black;
+            font-size:xx-large;
+        }
+        
+        .button-next-level {
+            font-size: large;
+            margin-left: 10px;
+            margin-bottom: 3px;
+        }

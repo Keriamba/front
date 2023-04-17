@@ -1,0 +1,51 @@
+.get-words-header {
+    position: relative;
+    display: flex;
+    place-items: center;
+    place-content: center;
+    margin-top: 15px;
+    font-size: larger;
+    background: grey;
+    
+}   
+
+.get-word-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+ .get-words-text {
+  border: none;
+  padding-left: 10px;
+  overflow: hidden;
+  max-height: 0; /* скрываем текст, устанавливая max-height в 0 */
+  transition: 0.3s ease;
+}
+.get-words-text.open {
+  transition: 0.3s ease-in-out; /* добавляем плавный переход для свойства max-height */
+  border: 1px solid #fefbfb;
+
+    max-height: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .get-words-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    border: none;
+    color: rgb(220, 211, 211);
+    background: rgb(108, 102, 102);
+    border-radius: 3px;
+    transition: all 500ms ease;
+  }
+  .get-words-button:hover {
+    color: rgb(193, 186, 186);
+  }
+  .get-words-button:active {
+    background: rgb(115, 106, 89);
+    border: 1px solid black;
+  }
+  

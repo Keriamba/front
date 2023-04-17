@@ -1,0 +1,27 @@
+.navigation {
+    margin: 20px 0 15px 15px;
+    height: 50px;
+    width: 350px;
+    background: rgb(185, 175, 175);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navigation a {
+    text-decoration: none;
+    border-radius: 2px;
+    margin-right: 5px;
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+    transition: background 500ms ease;
+}
+.navigation a:hover {
+    background: rgb(120, 116, 116);
+
+}
+
+.active {
+    background: rgb(120, 116, 116);
+}

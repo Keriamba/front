@@ -1,0 +1,41 @@
+
+.containerlvl2 {
+font-size: larger;
+}
+
+.liwraplv2 {
+    margin-right: 15px;
+    font-size:x-large;
+
+}
+.visible {
+    cursor: pointer;
+    margin-right: 4px;
+}
+.blur-text {
+        filter: blur(5px);
+        cursor: pointer;
+    margin-right: 4px;
+
+    }
+
+
+    .lvl-two {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        flex-direction: column;
+    }
+    
+    .words-wrapper {
+        padding-top: 10px;
+        border-bottom: 1px solid black;
+        font-size:xx-large;
+    }
+    
+    .button-next-level {
+        font-size: large;
+        margin-left: 10px;
+        margin-bottom: 3px;
+    }

@@ -1,0 +1,114 @@
+
+    .form-wrap {
+        margin-left: 15px;
+        border-radius: 5px;
+        width: 200px;
+        height: auto;
+        padding: 15px;
+        background: grey;
+    }
+
+    .button-wrap {
+        margin-left: 15px;
+        margin-top: 15px;
+        
+    }
+    .button-wrap button {
+        margin-right: 15px;
+    }
+
+    .toogle-button {
+        font-size: large;
+        margin-left: 15px;
+        margin-bottom: 5px;
+        background: rgb(98, 111, 98);
+        border: none;
+        padding: 7px;
+        border-radius: 4px;
+        transition: scale 350ms ease;
+    }
+
+    .toogle-button:active {
+        scale: 0.95;
+    }
+
+.user-dict {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.user-dict button {
+    margin: 15px 0 0 0;
+    background: rgb(194, 188, 188);
+    font-size: larger;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.user-dict button:active {
+    transform: scale(0.95);
+    background: rgb(138, 125, 108);
+}
+
+.button-wrap {
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+
+
+  .get-word-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    
+  }
+
+ .get-words-text {
+  position: relative;
+    margin-top: 10px;
+  border: none;
+  padding-left: 10px;
+  overflow: hidden;
+  max-height: 0; 
+  transition: 0.3s ease;
+}
+.get-words-text.open {
+  transition: 0.3s ease-in-out; 
+  border: 1px solid #fefbfb;
+    max-height: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .hide-button {
+    margin: 10px 0 -10px 0;
+    width: 55px;
+    background: rgb(194, 188, 188);
+    font-size:small;
+    border: 1px solid black;
+    padding-bottom: 3px;
+    border-radius: 3px;
+  }
+  .hide-button:active {
+    transform: scale(0.95);
+    background: rgb(138, 125, 108);
+  }
+
+  .del-button {
+    position: absolute;
+    top: 13px; 
+    right: 10px; 
+    z-index: 1;
+    width: 12px;
+    padding-left: 5px;
+    padding-bottom: 2px;
+    padding-top: -2px;
+    margin-right: -5px;
+    margin-top: -10px;
+    background: rgb(151, 74, 74);
+    cursor: pointer;
+  }
