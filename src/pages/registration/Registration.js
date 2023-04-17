@@ -42,7 +42,7 @@ export default function Registration() {
         <div className='reg-wrap'>
             <span className={checkError(errors.nickname?.message) ? 'error' : ''} >{checkError(errors.nickname?.message) ? errors.nickname.message : 'Nimimerkki'}</span>
             <input  {...register('nickname', {required: 'Virheellinen lempinimi'})} />
-            <span className={checkError(errors.password?.message) ? 'error' : ''} >{checkError(errors.password?.message) ? errors.password.message : 'Nimimerkki'}</span>
+            <span className={checkError(errors.password?.message) ? 'error' : ''} >{checkError(errors.password?.message) ? errors.password.message : 'Salasana'}</span>
             <input type='password' {...register('password', {required: 'Väärä salasana'})} />
             <button type='submit' >Vahvistaa</button>
         </div>
