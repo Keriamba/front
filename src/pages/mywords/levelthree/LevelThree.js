@@ -65,8 +65,8 @@ export default function LevelTwo() {
                         <li >
                             <span className='liwraplv2'>
                             <span className={item.visible ? 'visible' : 'blur-text'} onClick={() => showHideWord(Object.values(item)[0])}>
-                                     {Object.values(item)[0]}</span> 
-                               : <span>{Object.keys(item)[0]}</span><button className='button-next-level' onClick={() => {lvlUpdate(item)}}>{'>>>'}</button>
+                                     {Object.keys(item)[0]}</span> 
+                               : <span>{Object.values(item)[0]}</span><button className='button-next-level' onClick={() => {lvlUpdate(item)}}>{'>>>'}</button>
                             </span>
                            </li>
                     </div>
