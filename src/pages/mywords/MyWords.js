@@ -17,7 +17,8 @@ export default function MyWords() {
     editKey: '',
     editValue: '',
     editIndex: '',
-    group: ''
+    group: '',
+    translateReq: ''
   });
   const [toggleState, setToggleState] = useState({
     showForm: false,
@@ -192,11 +193,26 @@ const delDict = async (id) => {
 
 }
 
-
+const userSearch = async () => {
+  try {
+    const res = await axios.post("/user/search", inputData.translateReq);
+  
+    if (res.status === 200) {
+      
+      setFormData([...formData, { [Object.keys(res.payload)[0]]: Object.values(res.payload)[0], id: formData.length, level:1 }])
+      
+    }
+  } catch (err) {
+    console.warn(err)
+  }
+}
 
   return (
     <div>
       <Navigation />
+      <div className='search-wrap'>
+      <input onChange={handleInputChange} value={inputData.translateReq} name='translateReq' type='text' /> <button onClick={() => userSearch()} >find</button>
+      </div>
       <button onClick={() => { handleShowHide('form') }} className='toogle-button'>Скрыть/показать форму</button>
       {!toggleState.showForm ? '' : <>
         <div key={'testkey'} className='form-wrap'>

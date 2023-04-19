@@ -112,3 +112,8 @@
     background: rgb(151, 74, 74);
     cursor: pointer;
   }
+
+  .search-wrap {
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
