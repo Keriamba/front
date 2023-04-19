@@ -52,7 +52,8 @@ export default function MyWords() {
       editKey: '',
       editValue: '',
       editIndex: '',
-      group: ''
+      group: '',
+      translateReq: ''
     })
 
   };
