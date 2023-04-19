@@ -123,6 +123,8 @@ export default function MyWords() {
     setFormData([])
   };
 
+
+
   const cancelAdding = () => {
     setInputData({
       word: '',
@@ -197,6 +199,9 @@ const userSearch = async () => {
   try {
     const res = await axios.post("/user/search", inputData.translateReq);
   
+    console.log(res)
+
+
     if (res.status === 200) {
       
       setFormData([...formData, { [Object.keys(res.payload)[0]]: Object.values(res.payload)[0], id: formData.length, level:1 }])
