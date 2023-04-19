@@ -23,6 +23,7 @@ export default function MyWords() {
   const [toggleState, setToggleState] = useState({
     showForm: false,
     showDicts: true,
+    isError: false
   });
 
 
@@ -108,7 +109,7 @@ export default function MyWords() {
       Dictionary: savedData,
       groups: [inputData.group]
     }
-    const test = await axios.post('/dictionary', savedItem)
+    const test = await axios.post('/user/dictionary', savedItem)
     if(test) {
       console.log('словарь успешно создан')
     }
@@ -205,10 +206,14 @@ const userSearch = async () => {
 
     
     if (res.status === 200) {
-      
+      if (Boolean(Object.values(res.data)[0]) !== true) {
+        return setToggleState({...toggleState, isError:true})
+      }
       setFormData([...formData, { [Object.values(res.data)[0]]:Object.keys(res.data)[0] , id: formData.length, level:1 }])
       
-      setInputData( {...inputData,  translateReq: ''} )
+      setInputData( {...inputData,  translateReq: ''} );
+      setToggleState({...toggleState, isError:false})
+
     }
   } catch (err) {
     console.warn(err)
@@ -218,11 +223,12 @@ const userSearch = async () => {
   return (
     <div>
       <Navigation />
+      <span className='spashka'>{toggleState.isError ? 'Не удалось найти слово :(' : '' }</span>
       <div className='search-wrap'>
-      <input onChange={handleInputChange} value={inputData.translateReq} name='translateReq' type='text' /> <button onClick={() => userSearch()} >find</button>
+      <input onChange={handleInputChange} value={inputData.translateReq} name='translateReq' type='text' required /> <button onClick={() => userSearch()} >найти слово</button>
       </div>
       <button onClick={() => { handleShowHide('form') }} className='toogle-button'>Скрыть/показать форму</button>
-      {!toggleState.showForm ? '' : <>
+      {!toggleState.showForm && !Boolean(formData.length) ? '' : <>
         <div key={'testkey'} className='form-wrap'>
           <form onSubmit={handleSubmit}>
             <label>
@@ -234,7 +240,7 @@ const userSearch = async () => {
             <button type="submit">Отправить</button>
           </form>
         </div>
-        <div>
+        <div className='formdata-wrap'>
           {
             formData.map((item, index) => {
               return (
