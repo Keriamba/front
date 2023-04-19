@@ -197,15 +197,17 @@ const delDict = async (id) => {
 
 const userSearch = async () => {
   try {
-    const res = await axios.post("/user/search", inputData.translateReq);
+    let sendingBoj = {translateReq: inputData.translateReq}
+    const res = await axios.post("/user/search", sendingBoj);
   
     console.log(res)
 
-
+    
     if (res.status === 200) {
       
-      setFormData([...formData, { [Object.keys(res.payload)[0]]: Object.values(res.payload)[0], id: formData.length, level:1 }])
+      setFormData([...formData, { [Object.values(res.data)[0]]:Object.keys(res.data)[0] , id: formData.length, level:1 }])
       
+      setInputData( {...inputData,  translateReq: ''} )
     }
   } catch (err) {
     console.warn(err)
